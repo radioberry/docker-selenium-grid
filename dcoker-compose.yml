@@ -1,0 +1,53 @@
+#イメージ名	説明
+#selenium/hub	Selenium Grid の Hub を起動するイメージ
+#selenium/node-chrome	Chrome が使用可能な状態で Selenium Grid の Node を起動して Hub に接続するイメージ
+#selenium/node-firefox	Firefox が使用可能な状態で Selenium Grid の Node を起動して Hub に接続するイメージ
+#selenium/node-chrome-debug	selenium/node-chrome に VNC サーバーがインストールされたもの
+#selenium/node-firefox-debug	selenium/node-firefox に VNC サーバーがインストールされたもの
+version: '3'
+services:
+  https-portal:
+    image: steveltn/https-portal:latest
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - hub
+    restart: always
+    environment:
+      DOMAINS: 'selenium.example.com -> http://hub'
+      STAGE: 'production'
+      # FORCE_RENEW: 'true'
+  hub:
+    image: selenium/hub:latest
+    ports:
+      - '4444:4444'
+    restart: always
+  chrome:
+    image: selenium/node-chrome:latest
+    links:
+      - hub
+    volumes:
+      - /dev/crandom:/dev/random
+    restart: always
+  firefox:
+    image: selenium/node-firefox:latest
+    links:
+      - hub
+    volumes:
+      - /dev/frandom:/dev/random
+    restart: always
+  chrome-vnc:
+    image: selenium/node-chrome-debug:latest
+    links:
+      - hub
+    volumes:
+      - /dev/cvrandom:/dev/random
+    restart: always
+  firefox-vnc:
+    image: selenium/node-firefox-debug:latest
+    links:
+      - hub
+    volumes:
+      - /dev/fvrandom:/dev/random
+    restart: always
