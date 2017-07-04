@@ -19,7 +19,7 @@ before_script:
   - docker-compose up -d
 
 script:
-  - sleep 100
+  - sleep 30
   - docker ps
   - curl --version
   - curl localhost:4444
