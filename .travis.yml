@@ -27,6 +27,6 @@ script:
 
 after_script:
   - docker images
-  
+  - docker ps  
 notifications:
   slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
