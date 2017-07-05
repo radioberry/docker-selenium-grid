@@ -1,9 +1,3 @@
-#イメージ名	説明
-#selenium/hub	Selenium Grid の Hub を起動するイメージ
-#selenium/node-chrome	Chrome が使用可能な状態で Selenium Grid の Node を起動して Hub に接続するイメージ
-#selenium/node-firefox	Firefox が使用可能な状態で Selenium Grid の Node を起動して Hub に接続するイメージ
-#selenium/node-chrome-debug	selenium/node-chrome に VNC サーバーがインストールされたもの
-#selenium/node-firefox-debug	selenium/node-firefox に VNC サーバーがインストールされたもの
 version: '3'
 services:
   https-portal:
