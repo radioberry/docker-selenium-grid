@@ -1,17 +1,5 @@
 version: '3'
 services:
-  https-portal:
-    image: steveltn/https-portal:latest
-    ports:
-      - '80:80'
-      - '443:443'
-    links:
-      - hub
-    restart: always
-    environment:
-      DOMAINS: 'selenium.example.com -> http://hub'
-      STAGE: 'production'
-      # FORCE_RENEW: 'true'
   hub:
     image: selenium/hub:latest
     ports:
