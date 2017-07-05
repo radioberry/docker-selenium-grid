@@ -30,5 +30,7 @@ after_script:
   - docker ps
   - sleep 30
   - docker ps
+  - sleep 30
+  - docker ps
 notifications:
   slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
