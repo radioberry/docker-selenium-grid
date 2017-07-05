@@ -24,28 +24,28 @@ services:
       - '4444:4444'
     restart: always
   chrome:
-    image: selenium/node-chrome:latest
+    image: selenium/node-chrome:3.4.0-einsteinium
     links:
       - hub
     volumes:
       - /dev/crandom:/dev/random
     restart: always
   firefox:
-    image: selenium/node-firefox:latest
+    image: selenium/node-firefox:3.4.0-einsteinium
     links:
       - hub
     volumes:
       - /dev/frandom:/dev/random
     restart: always
   chrome-vnc:
-    image: selenium/node-chrome-debug:latest
+    image: selenium/node-chrome-debug:3.4.0-einsteinium
     links:
       - hub
     volumes:
       - /dev/cvrandom:/dev/random
     restart: always
   firefox-vnc:
-    image: selenium/node-firefox-debug:latest
+    image: selenium/node-firefox-debug:3.4.0-einsteinium
     links:
       - hub
     volumes:
