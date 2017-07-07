@@ -10,7 +10,7 @@ services:
     ports:
       - '4444:4444'
     restart: always
-    links:
+#    links:
 #      - master
   chrome:
     image: selenium/node-chrome:3.4.0-einsteinium
