@@ -15,19 +15,15 @@ install:
   - git clone https://github.com/radioberry/docker-selenium-grid.git
   - ls
 before_script:
-  - docker-compose build
+#  - docker-compose build
 
 script:
-  - docker ps
-#  - docker-compose up -d
   - docker-compose up -d --scale chrome=10 hub chrome
-  - docker images
   - docker ps
   - curl --version
   - curl localhost:4444
   - curl localhost:4444/grid/console
 
 after_script:
-  - docker ps -a
 notifications:
   slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
