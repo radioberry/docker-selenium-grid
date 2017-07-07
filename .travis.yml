@@ -28,6 +28,6 @@ script:
   - curl localhost:4444/grid/console
 
 after_script:
-  - docker ps
+  - docker ps -a
 notifications:
   slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
