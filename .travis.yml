@@ -17,21 +17,16 @@ install:
   - docker ps -a
 
 before_script:
+  - docker-compose build
   - docker-compose up -d
 
 script:
-  - sleep 30
   - docker ps
   - curl --version
   - curl localhost:4444
   - curl localhost:4444/grid/console
 
 after_script:
-  - docker images
-  - docker ps
-  - sleep 30
-  - docker ps
-  - sleep 30
   - docker ps
 notifications:
   slack: diorama-radio:JaoyLeAlhZ8e6ugkadHEdteG
