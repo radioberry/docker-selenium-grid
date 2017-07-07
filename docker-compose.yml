@@ -1,10 +1,15 @@
 version: '3'
 services:
+  master:
+    build:
+      context: .
   hub:
     image: selenium/hub:latest
     ports:
       - '4444:4444'
     restart: always
+    links:
+      - master
   chrome:
     image: selenium/node-chrome:3.4.0-einsteinium
     links:
