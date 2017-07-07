@@ -16,6 +16,7 @@ install:
   - ls
 before_script:
 #  - docker-compose build
+  - docker-compose ps -q dockerseleniumgrid_hub_1
 
 script:
   - docker-compose up -d --scale chrome=10 hub chrome
