@@ -19,7 +19,7 @@ before_script:
 script:
   - docker-compose up -d --scale chrome=10 hub chrome
   - docker-compose ps -q hub
-  - docker exec -it $(docker-compose ps -q hub) apt-get update && apt-get upgrade && apt-get install git wget
+  - docker exec -it $(docker-compose ps -q hub) sudo apt-get update && apt-get upgrade && apt-get install git wget
   - docker exec -it $(docker-compose ps -q hub) curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo && apt-get install yarn nodejs
   - docker ps
   - curl --version
