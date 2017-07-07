@@ -20,7 +20,7 @@ before_script:
 script:
   - docker ps
 #  - docker-compose up -d
-  - docker-compose up -d --scale chrome=10 hub
+  - docker-compose up -d --scale chrome=10 hub chrome
   - docker images
   - docker ps
   - curl --version
