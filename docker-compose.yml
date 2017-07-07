@@ -3,7 +3,6 @@ services:
   master:
     build:
       context: .
-    command: /sbin/init
   hub:
     image: selenium/hub:latest
     ports:
