@@ -12,7 +12,7 @@ branches:
     - radioberry-patch-1 
 
 install:
-  - git clone https://github.com/radioberry/docker-selenium-grid.git
+#  - git clone https://github.com/radioberry/docker-selenium-grid.git
   - ls
 before_script:
 #  - docker-compose build
