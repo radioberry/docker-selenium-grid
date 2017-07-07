@@ -9,6 +9,7 @@ branches:
   only: 
     - master
     - staging-ci
+    - radioberry-patch-1 
 
 install:
   - git clone https://github.com/radioberry/docker-selenium-grid.git
