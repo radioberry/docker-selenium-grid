@@ -16,3 +16,4 @@ COPY . /work
 
 CMD docker-entrypoint.sh
 #!/bin/bash
+CMD ["/sbin/init"]
