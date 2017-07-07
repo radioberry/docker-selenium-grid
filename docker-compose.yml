@@ -1,9 +1,9 @@
 version: '3'
 services:
   master:
-    image: centos:centos7
     build:
       context: .
+    command: /sbin/init
   hub:
     image: selenium/hub:latest
     ports:
