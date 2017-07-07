@@ -12,6 +12,11 @@ services:
     volumes:
       - /dev/crandom:/dev/random
     restart: always
+    environment:
+     - no_proxy=localhost
+     - HUB_PORT_4444_TCP_ADDR=hub
+     - HUB_PORT_4444_TCP_PORT=4444
+     - HUB_ENV_no_proxy=localhost
   firefox:
     image: selenium/node-firefox:3.4.0-einsteinium
     links:
@@ -19,6 +24,11 @@ services:
     volumes:
       - /dev/frandom:/dev/random
     restart: always
+    environment:
+     - no_proxy=localhost
+     - HUB_PORT_4444_TCP_ADDR=hub
+     - HUB_PORT_4444_TCP_PORT=4444
+     - HUB_ENV_no_proxy=localhost
   chrome-vnc:
     image: selenium/node-chrome-debug:3.4.0-einsteinium
     links:
@@ -26,6 +36,11 @@ services:
     volumes:
       - /dev/cvrandom:/dev/random
     restart: always
+    environment:
+     - no_proxy=localhost
+     - HUB_PORT_4444_TCP_ADDR=hub
+     - HUB_PORT_4444_TCP_PORT=4444
+     - HUB_ENV_no_proxy=localhost
   firefox-vnc:
     image: selenium/node-firefox-debug:3.4.0-einsteinium
     links:
@@ -33,3 +48,8 @@ services:
     volumes:
       - /dev/fvrandom:/dev/random
     restart: always
+    environment:
+     - no_proxy=localhost
+     - HUB_PORT_4444_TCP_ADDR=hub
+     - HUB_PORT_4444_TCP_PORT=4444
+     - HUB_ENV_no_proxy=localhost
