@@ -18,8 +18,9 @@ before_script:
 #  - docker-compose build
 script:
   - docker-compose up -d --scale chrome=10 hub chrome
-  - docker-compose ps -q dockerseleniumgrid_hub_1
   - docker-compose ps -q hub
+  - docker exec -it $(docker-compose ps -q hub) yum -y update && yum -y install git wget
+  - docker exec -it $(docker-compose ps -q hub) curl --silent --location https://rpm.nodesource.com/setup_6.x | bash - && wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo && yum -y install nodejs yarn
   - docker ps
   - curl --version
   - curl localhost:4444
